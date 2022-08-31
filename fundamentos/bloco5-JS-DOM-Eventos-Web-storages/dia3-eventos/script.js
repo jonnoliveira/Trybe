@@ -27,10 +27,10 @@ for (index of decemberDaysList) {
   days.className = "day";
   if (index === 24 || index === 25 || index === 31) {
     days.classList.add("day", "holiday");
-  }
+  };
   if (index === 4 || index === 11 || index === 18 || index === 25) {
     days.classList.add("day", "friday");
-  }
+  };
 };
 
 // >>>>>>>>>>> EXERCICIO 2
@@ -42,7 +42,7 @@ function buttonFeriado(str) {
   button.innerText = str;
   button.classList.add("btn-holiday");
   document.getElementsByClassName("buttons-container")[0].appendChild(button);
-}
+};
 
 // >>>>>>>>>>> EXERCICIO 3
 
@@ -71,7 +71,7 @@ function buttonFriday(str) {
   button.innerText = str;
   button.id = "btn-friday";
   document.getElementsByClassName("buttons-container")[0].appendChild(button);
-}
+};
 
 // >>>>>>>>>>> EXERCICIO 5
 
@@ -100,13 +100,12 @@ function zoom() {
   days.forEach(function (zoomy) {
     zoomy.addEventListener("mouseenter", function (zumIn) {
       zumIn.target.style.fontSize = "40px";
-      zumIn.target.style.transition = "0.3s";
     });
     zoomy.addEventListener("mouseleave", function (zumOut) {
       zumOut.target.style.fontSize = "20px";
     });
   });
-}
+};
 
 // >>>>>>>>>>> EXERCICIO 7
 
@@ -114,20 +113,46 @@ function createTask(str) {
   let span = document.createElement("span");
   span.innerText = str;
   document.getElementsByClassName("my-tasks")[0].appendChild(span);
-}
+};
 
 createTask("cozinhar");
 
 // >>>>>>>>>>> EXERCICIO 8
 // * Essa função deverá receber como parâmetro uma string ('cor') e criar dinamicamente um elemento de tag `<div>` com a classe `task`.
 
-function createSubtitle (str) {
+function createSubtitle(str) {
   let div = document.createElement("div");
   div.style.backgroundColor = str;
   div.classList.add("task");
   document.getElementsByClassName("my-tasks")[0].appendChild(div);
-}
+};
 
-createSubtitle ("green");
+createSubtitle("green");
 
 // >>>>>>>>>>> EXERCICIO 9
+
+selecTask();
+
+function selecTask() {
+  let select = document.getElementsByClassName("task");
+  for (index in select) {
+    select[index].addEventListener("click", function (selection) {
+      selection.target.className = "selected task";
+    }, false);
+  };
+};
+
+
+
+
+// function selecTask() {
+//   let select = document.getElementsByClassName("task")[0];
+//   select.className = "selected task";
+// }
+
+
+
+// select.forEach(function (click) {
+//   click.addEventListener("click", function () {
+//     click.classList.add("task selected");
+//   });
