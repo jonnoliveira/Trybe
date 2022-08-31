@@ -53,7 +53,7 @@ function backgroundHolidays() {
     if (color.style.backgroundColor !== "yellow") {
       color.style.backgroundColor = "yellow";
     } else {
-      color.style.backgroundColor = "rgb(238,238,238)"
+      color.style.backgroundColor = "rgb(238,238,238)";
     };
   };
 };
@@ -72,3 +72,43 @@ function buttonFriday(str) {
   button.id = "btn-friday";
   document.getElementsByClassName("buttons-container")[0].appendChild(button);
 }
+
+// >>>>>>>>>>> EXERCICIO 5
+
+function textFridays() {
+  let fridays = document.getElementsByClassName("friday");
+  for (index in fridays) {
+    let text = document.getElementsByClassName("friday")[index];
+    if (text.innerText !== "SEXTOOU!") {
+      text.innerText = "SEXTOOU!";
+    } else {
+      text.innerText = "???";
+    };
+  };
+};
+
+let btnFriday = document.getElementById("btn-friday");
+
+btnFriday.addEventListener("click", textFridays);
+
+// >>>>>>>>>>> EXERCICIO 6
+
+zoom();
+
+function zoom() {
+  let days = document.querySelectorAll(".day");
+  days.forEach(function (zoomy) {
+    zoomy.addEventListener("mouseenter", function (zumIn) {
+      zumIn.target.style.fontSize = "40px";
+      zumIn.target.style.transition = "0.3s";
+    });
+    zoomy.addEventListener("mouseleave", function (zumOut) {
+      zumOut.target.style.fontSize = "20px";
+    });
+  });
+}
+
+// >>>>>>>>>>> EXERCICIO 7
+
+
+
