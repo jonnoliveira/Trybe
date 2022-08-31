@@ -110,5 +110,10 @@ function zoom() {
 
 // >>>>>>>>>>> EXERCICIO 7
 
+function createTask(str) {
+  let span = document.createElement("span");
+  span.innerText = str;
+  document.getElementsByClassName("my-tasks")[0].appendChild(span);
+}
 
-
+createTask("cozinhar");
