@@ -117,3 +117,17 @@ function createTask(str) {
 }
 
 createTask("cozinhar");
+
+// >>>>>>>>>>> EXERCICIO 8
+// * Essa função deverá receber como parâmetro uma string ('cor') e criar dinamicamente um elemento de tag `<div>` com a classe `task`.
+
+function createSubtitle (str) {
+  let div = document.createElement("div");
+  div.style.backgroundColor = str;
+  div.classList.add("task");
+  document.getElementsByClassName("my-tasks")[0].appendChild(div);
+}
+
+createSubtitle ("green");
+
+// >>>>>>>>>>> EXERCICIO 9
