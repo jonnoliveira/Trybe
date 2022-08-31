@@ -61,3 +61,14 @@ function backgroundHolidays() {
 let btnFeriado = document.getElementsByClassName("btn-holiday")[0];
 
 btnFeriado.addEventListener("click", backgroundHolidays);
+
+// >>>>>>>>>>> EXERCICIO 4
+
+buttonFriday("Sexta-feira");
+
+function buttonFriday(str) {
+  let button = document.createElement("button");
+  button.innerText = str;
+  button.id = "btn-friday";
+  document.getElementsByClassName("buttons-container")[0].appendChild(button);
+}
