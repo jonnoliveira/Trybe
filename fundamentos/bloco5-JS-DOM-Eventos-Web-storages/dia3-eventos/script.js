@@ -133,7 +133,7 @@ createSubtitle("green");
 
 selecTask();
 
-function selecTask() {
+function selecTask(selection) {
   let divTask = document.getElementsByClassName("task");
   for (index in divTask) {
     let select = document.getElementsByClassName("task")[index];
@@ -144,10 +144,28 @@ function selecTask() {
         selection.target.className = "task";
       }
     });
+    return selection;
   };
 };
 
 // >>>>>>>>>>> EXERCICIO 10
+
+let daySelect = document.getElementsByClassName("day");
+let divTask = document.getElementsByClassName("task");
+for (index in divTask) {
+  let select = document.getElementsByClassName("task")[index];
+  for (index in daySelect) {
+    daySelect[index].addEventListener("click", function (backColor) {
+      if (select.className === "selected task") {
+        bColor = select.style.backgroundColor;
+        backColor.target.style.backgroundColor = bColor;
+      };
+    });
+  };
+};
+
+// >>>>>>>>>>> EXERCICIO BONUS
+
 
 
 
