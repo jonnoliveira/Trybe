@@ -134,21 +134,23 @@ createSubtitle("green");
 selecTask();
 
 function selecTask() {
-  let select = document.getElementsByClassName("task");
-  for (index in select) {
-    select[index].addEventListener("click", function (selection) {
-      selection.target.className = "selected task";
-    }, false);
+  let divTask = document.getElementsByClassName("task");
+  for (index in divTask) {
+    let select = document.getElementsByClassName("task")[index];
+    select.addEventListener("click", function (selection) {
+      if (select.className === "task") {
+        selection.target.className = "selected task";
+      } else {
+        selection.target.className = "task";
+      }
+    });
   };
 };
 
+// >>>>>>>>>>> EXERCICIO 10
 
 
 
-// function selecTask() {
-//   let select = document.getElementsByClassName("task")[0];
-//   select.className = "selected task";
-// }
 
 
 
