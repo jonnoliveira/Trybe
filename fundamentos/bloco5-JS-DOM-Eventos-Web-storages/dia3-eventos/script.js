@@ -32,3 +32,32 @@ for (index of decemberDaysList) {
     days.classList.add("day", "friday");
   }
 };
+
+// >>>>>>>>>>> EXERCICIO 2
+
+buttonFeriado("Feriados");
+
+function buttonFeriado(str) {
+  let button = document.createElement("button");
+  button.innerText = str;
+  button.classList.add("btn-holiday");
+  document.getElementsByClassName("buttons-container")[0].appendChild(button);
+}
+
+// >>>>>>>>>>> EXERCICIO 3
+
+function backgroundHolidays() {
+  let holidays = document.getElementsByClassName("holiday");
+  for (index in holidays) {
+    let color = document.getElementsByClassName("holiday")[index];
+    if (color.style.backgroundColor !== "yellow") {
+      color.style.backgroundColor = "yellow";
+    } else {
+      color.style.backgroundColor = "rgb(238,238,238)"
+    };
+  };
+};
+
+let btnFeriado = document.getElementsByClassName("btn-holiday")[0];
+
+btnFeriado.addEventListener("click", backgroundHolidays);
