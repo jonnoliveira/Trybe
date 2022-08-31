@@ -150,21 +150,37 @@ function selecTask(selection) {
 
 // >>>>>>>>>>> EXERCICIO 10
 
-let daySelect = document.getElementsByClassName("day");
-let divTask = document.getElementsByClassName("task");
-for (index in divTask) {
-  let select = document.getElementsByClassName("task")[index];
-  for (index in daySelect) {
-    daySelect[index].addEventListener("click", function (backColor) {
-      if (select.className === "selected task") {
-        bColor = select.style.backgroundColor;
-        backColor.target.style.backgroundColor = bColor;
-      };
-    });
+dayColor();
+
+
+function dayColor() {
+  let daySelect = document.getElementsByClassName("day");
+  let divTask = document.getElementsByClassName("task");
+  for (index in divTask) {
+    let select = document.getElementsByClassName("task")[index];
+    for (index in daySelect) {
+      daySelect[index].addEventListener("click", function (backColor) {
+        if (select.className === "selected task") {
+          bColor = select.style.backgroundColor;
+          backColor.target.style.color = bColor;
+        };
+      });
+    };
   };
 };
-
 // >>>>>>>>>>> EXERCICIO BONUS
+
+let input = document.getElementById("task-input");
+let li = document.createElement("li");
+// div.className = "tasks-container";
+document.getElementsByClassName("task-list")[0].appendChild(li);
+// input.addEventListener("input", function () {
+//   let value = input.value;
+//   console.log(value);
+
+//   // let box = document.querySelector(".tech");
+//   // box.innerHTML = value;
+// });
 
 
 
